@@ -46,7 +46,7 @@ def main():
             for s in shots:
                 if a.collides_with(s):
                     s.kill()
-                    a.kill()
+                    a.split()
                     break
 
         if not running:

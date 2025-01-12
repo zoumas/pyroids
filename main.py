@@ -43,6 +43,12 @@ def main():
                 print("Game over!")
                 running = False
                 break
+            for s in shots:
+                if a.collides_with(s):
+                    s.kill()
+                    a.kill()
+                    break
+
         if not running:
             break
 

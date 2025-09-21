@@ -8,6 +8,8 @@ def main():
     print(f"Screen height: {constants.SCREEN_HEIGHT}")
 
     pygame.init()
+    clock = pygame.time.Clock()
+    dt = 0
     screen_size = (constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT)
     screen = pygame.display.set_mode(screen_size)
 
@@ -22,6 +24,8 @@ def main():
 
         # refresh the screen
         pygame.display.flip()
+
+        dt = clock.tick(60) / 1_000
 
 
 if __name__ == "__main__":

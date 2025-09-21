@@ -1,0 +1,58 @@
+# --- Python bytecode & caches ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.dll
+
+# --- Virtual envs (uv often uses in-project .venv) ---
+.venv/
+venv/
+env/
+
+# --- Build & packaging artifacts ---
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+pip-wheel-metadata/
+*.whl
+
+# --- Test, coverage, and tooling caches ---
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+.ruff_cache/
+.pyright/
+.dmypy.json
+.pyre/
+
+# --- Logs & local runs ---
+*.log
+*.tmp
+*.swp
+*.swo
+
+# --- IDE / Editor crap ---
+.vscode/
+.idea/
+*.iml
+
+# --- OS detritus ---
+.DS_Store
+Thumbs.db
+
+# --- Game runtime outputs (keep assets you ship, ignore junk) ---
+# Uncomment if your game writes these locally:
+# saves/
+# screenshots/
+# recordings/
+# *.sav
+# *.db
+# *.sqlite3

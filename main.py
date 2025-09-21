@@ -14,6 +14,10 @@ def main():
     screen_size = (constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT)
     screen = pygame.display.set_mode(screen_size)
 
+    updatables = pygame.sprite.Group()
+    drawables = pygame.sprite.Group()
+
+    Player.containers = (updatables, drawables)
     player = Player(constants.SCREEN_WIDTH / 2, constants.SCREEN_HEIGHT / 2)
 
     # game loop:
@@ -25,8 +29,10 @@ def main():
 
         screen.fill("black")
 
-        player.update(dt)
-        player.draw(screen)
+        updatables.update(dt)
+
+        for drawable in drawables:
+            drawable.draw(screen)
 
         # refresh the screen
         pygame.display.flip()

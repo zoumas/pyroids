@@ -17,5 +17,16 @@ class Player(CircleShape):
         c = self.position - forward * self.radius + right
         return [a, b, c]
 
+    def rotate(self, dt):
+        self.rotation += constants.PLAYER_TURN_SPEED * dt
+
     def draw(self, screen):
         pygame.draw.polygon(screen, "white", self.triangle(), constants.LINE_WIDTH)
+
+    def update(self, dt):
+        keys = pygame.key.get_pressed()
+
+        if keys[pygame.K_d] or keys[pygame.K_RIGHT]:
+            self.rotate(dt)
+        if keys[pygame.K_a] or keys[pygame.K_LEFT]:
+            self.rotate(-dt)

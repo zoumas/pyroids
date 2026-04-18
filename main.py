@@ -10,6 +10,8 @@ def main():
 
     pygame.init()
     screen = pygame.display.set_mode((constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT))
+    clock = pygame.time.Clock()
+    dt = 0
 
     while True:
         log_state()
@@ -21,6 +23,8 @@ def main():
 
         screen.fill("black")
         pygame.display.flip()
+
+        dt = clock.tick(constants.FPS) / 1_000  # convert to seconds
 
 
 if __name__ == "__main__":
